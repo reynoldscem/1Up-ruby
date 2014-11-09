@@ -49,12 +49,43 @@ puts <span class="s2">"Hello world!"</span></pre></div>
 puts <span class="m">1</span><span class="o">+</span><span class="m">2</span>
 puts <span class="m">1</span>.<span class="o">+</span>(<span class="m">2</span>)</pre></div>
 
-<p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods like anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
+<p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods lkie anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
 
-<p>Let's try and make this a little more personal by printing out your own name - we can either get this from standard input or from command line arguments.</p>
+<p>Let's try and make this a little more personal by printing out your own name - we can either get this from standard input or from command line arguments. In order to make this workshop a little less of a walkthrough, I'm going to try to avoid just giving you code to run and instead give you the building blocks and let you come up with a solution, this is to make it less tedious for those with some (or lots!) of programming experience. If you are new, and find yourself getting stuck be sure to ask for help!</p>
 
-<pre lang="rubyputs"><code>puts "Hello #{gets.chomp}"
-</code></pre>
+<p>Read the following snippet, and see if you can print out a greeting to yourself, giving your name from standard input in just one line.</p>
+
+<div class="highlight highlight-ruby"><pre>someInput <span class="o">=</span> gets.chomp
+<span class="c1"># gets is used to get a line of input from standard in</span>
+<span class="c1"># chomp is used to 'eat up' newline characters off of strings</span>
+
+string1 <span class="o">=</span> <span class="s2">"Ruby"</span>
+string2 <span class="o">=</span> <span class="s2">"open source"</span>
+
+puts <span class="s2">"<span class="cp">#{</span><span class="h">string1</span><span class="cp"><span class="h">}</span></span> is completely <span class="cp">#{</span><span class="h">strings2</span><span class="cp"><span class="h">}</span></span>"</span>
+<span class="c1"># #{variable} is used to interpolate (include) variables in a string.</span>
+<span class="c1"># If you're used to other languages (Python, Java, C*), Ruby also supports interpolation in their style.</span>
+puts <span class="s2">"%s is completely %s"</span> <span class="o">%</span> <span class="o">[</span>string1, string2<span class="o">]</span></pre></div>
+
+<p>Assuming you've got a solution for that (don't worry if it's a few lines) let's compare that to the same thing in Java.</p>
+
+<div class="highlight highlight-java"><pre><span class="k">import</span> <span class="k">java.io.*</span>;
+<span class="k">public</span> <span class="k">class</span> <span class="nc">example</span>
+{
+  <span class="k">public</span> <span class="k">static</span> <span class="kt">void</span> <span class="nf">main</span> (<span class="kt">String</span>[] <span class="nv">args</span>)
+  {
+    <span class="k">try</span>
+    {
+      <span class="kt">BufferedReader</span> stdin <span class="o">=</span> <span class="k">new</span> <span class="kt">BufferedReader</span>(<span class="k">new</span> <span class="kt">InputStreamReader</span>(<span class="kt">System</span><span class="o">.</span>in));
+      <span class="kt">String</span> name;
+      name <span class="o">=</span> stdin<span class="o">.</span>readLine();
+      <span class="kt">System</span><span class="o">.</span>out<span class="o">.</span>println(<span class="s2">"Hello "</span> <span class="o">+</span> name);
+    } <span class="k">catch</span> (<span class="kt">IOException</span> e) {
+      <span class="kt">System</span><span class="o">.</span>err<span class="o">.</span>println(<span class="s2">"IOException: "</span> <span class="o">+</span> e<span class="o">.</span>getMessage());
+    }
+  }
+}
+</pre></div>
       </section>
     </div>
 

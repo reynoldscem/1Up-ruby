@@ -49,7 +49,7 @@ puts <span class="s2">"Hello world!"</span></pre></div>
 puts <span class="m">1</span><span class="o">+</span><span class="m">2</span>
 puts <span class="m">1</span>.<span class="o">+</span>(<span class="m">2</span>)</pre></div>
 
-<p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods lkie anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
+<p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods like anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
 
 <p>Let's try and make this a little more personal by printing out your own name - we can either get this from standard input or from command line arguments. In order to make this workshop a little less of a walkthrough, I'm going to try to avoid just giving you code to run and instead give you the building blocks and let you come up with a solution, this is to make it less tedious for those with some (or lots!) of programming experience. If you are new, and find yourself getting stuck be sure to ask for help!</p>
 
@@ -98,6 +98,8 @@ puts <span class="s2">"%s is completely %s"</span> <span class="o">%</span> <spa
 puts animals
 
 people <span class="o">=</span> <span class="o">[</span><span class="s2">"charlie"</span>, <span class="s2">"mark"</span>, <span class="s2">"dave"</span><span class="o">]</span>
+puts people<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+puts people.first
 puts people
 
 numbers <span class="o">=</span> <span class="o">[</span><span class="m">78</span>, <span class="m">0</span>, <span class="m">47.8</span>, <span class="o">-</span><span class="m">100</span>, <span class="m">1</span><span class="o">/</span><span class="m">0.0</span>, <span class="no">Math</span>::<span class="no">PI</span><span class="o">]</span>
@@ -115,7 +117,17 @@ puts petHash.keys
 puts petHash.values
 puts petHash<span class="o">[</span><span class="s2">"charlie"</span><span class="o">]</span>
 puts petHash<span class="o">[</span><span class="s2">"dave"</span><span class="o">]</span>
-</pre></div>
+
+petHash<span class="o">[</span><span class="s2">"lewis"</span><span class="o">]</span> <span class="o">=</span> <span class="s2">"snake"</span>
+puts petHash</pre></div>
+
+<p>If we wanted to do some simple operations, like put the two arrays <code>animals</code> and <code>people</code> together to make the hash petHash we normally might think in terms of loops. Going through every element in the arrays and adding them into a hash. In Ruby this is not very idiomatic - in fact it may shock you to learn that Ruby has no <code>For</code> construct!</p>
+
+<div class="highlight highlight-ruby"><pre>petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span>people.zip(animals)<span class="o">]</span>
+<span class="c1"># This is (one of the ways) how we can do the above in Ruby.</span></pre></div>
+
+<h1>
+<a id="control-flow" class="anchor" href="#control-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Flow</h1>
       </section>
     </div>
 

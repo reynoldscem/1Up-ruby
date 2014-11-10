@@ -35,6 +35,8 @@
 
 <p>You can work alone, or in pairs. Pair programming is a very good technique that is used alot in Agile teams. While it may seem like you'd get less work done with two programmers per computer, just think how much of your programming time are you spending actually typing and how much are you spending <em>thinking</em>.</p>
 
+<p>Solutions and random snippets are available by the links above / GitHub. Among these are the solutions to the tasks. It would be possible to read them and to 'cheat', but this would probably just hurt your own learning. </p>
+
 <p>You can see how to install Ruby on you operating system of choice <a href="https://www.ruby-lang.org/en/installation/">here</a>.</p>
 
 <h1>
@@ -191,7 +193,7 @@ puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</sp
 <div class="highlight highlight-Ruby"><pre><span class="m">1</span>..<span class="m">100</span>   <span class="c1"># A range from 1-100, a type of collection</span>
 <span class="m">1</span>...<span class="m">100</span>  <span class="c1"># A range from 1-99</span>
 
-(<span class="m">1</span>..<span class="m">10</span>).each {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> puts x<span class="o">*</span>x<span class="o">*</span>x}</pre></div>
+(<span class="m">1</span>..<span class="m">10</span>).each {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> puts x<span class="o">*</span>x<span class="o">*</span>x} <span class="c1"># Print the cube of all numbers from 1-10</span></pre></div>
 
 <p>each takes a collection, such as a range, an array or a hash and passes each item in the collection successively to the block. How to refer to the items passed from the collection is specified between the pipes <code>| |</code>. Let's see something using a few of the things we've seen so far.</p>
 
@@ -204,14 +206,27 @@ petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</
 <span class="k">end</span></pre></div>
 
 <h1>
-<a id="time-for-a-task" class="anchor" href="#time-for-a-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time for a task</h1>
+<a id="time-for-task-1" class="anchor" href="#time-for-task-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time for task 1</h1>
+
+<p>The program Greetings should take a list of names passed as command line arguments like this: <code>ruby greetings.rb charlie lewis nathan</code></p>
+
+<p>It should print out:
+Hello Charlie!
+Hello Lewis!
+Hello Nathan!</p>
+
+<p>You will need:</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="no">ARGV</span>         <span class="c1"># The array containing all your command line arguments.</span></pre></div>
+
+<h1>
+<a id="task-2" class="anchor" href="#task-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2</h1>
 
 <p>The program FizzBuzz should take as an argument an integer to be passed via the command line like this: <code>ruby fizzbuzz.rb 20</code></p>
 
 <p>It should print out Fizz if the number is divisible by 3, Buzz if it is divisible by 5, FizzBuzz if it is divisible by 15 and the number itself if it is divisible by neither 3 nor 5. This should be doable with what we've seen already, plus a couple of things I'll demonstrate below. Feel free to try to write this in pairs.</p>
 
-<div class="highlight highlight-Ruby"><pre><span class="no">ARGV</span>         <span class="c1"># The array containing all your command line arguments.</span>
-x.modulo(y)  <span class="c1"># The remainder of dividing x by y</span>
+<div class="highlight highlight-Ruby"><pre>x.modulo(y)  <span class="c1"># The remainder of dividing x by y</span>
 <span class="s2">"3"</span>.to_i     <span class="c1"># String to integer</span></pre></div>
       </section>
     </div>

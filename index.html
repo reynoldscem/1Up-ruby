@@ -31,7 +31,9 @@
         <h1>
 <a id="welcome" class="anchor" href="#welcome" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome</h1>
 
-<p>Hello and welcome to 1-UP's Ruby workshop. Whether you're entirely new to programming, new to the Ruby language or just want to learn something new - we hope that you will get something of benefit. You can work alone, or in pairs. Pair programming is a very good technique that is used alot in Agile teams. While it may seem like you'd get less work done with two programmers per computer, just think how much of your programming time are you spending actually typing and how much are you spending <em>thinking</em>.</p>
+<p>Hello and welcome to 1-UP's Ruby workshop. Whether you're entirely new to programming, new to the Ruby language or just want to learn something new - we hope that you will get something of benefit. </p>
+
+<p>You can work alone, or in pairs. Pair programming is a very good technique that is used alot in Agile teams. While it may seem like you'd get less work done with two programmers per computer, just think how much of your programming time are you spending actually typing and how much are you spending <em>thinking</em>.</p>
 
 <p>You can see how to install Ruby on you operating system of choice <a href="https://www.ruby-lang.org/en/installation/">here</a>.</p>
 
@@ -128,6 +130,91 @@ puts petHash</pre></div>
 
 <h1>
 <a id="control-flow" class="anchor" href="#control-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Flow</h1>
+
+<p>To start simply, Ruby features the standard if, while and case statements. Though with a few little differences.</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="k">if</span> <span class="m">2</span>.even?                             <span class="c1"># methods ending in ? return booleans!</span>
+  puts <span class="s2">"Even!"</span>
+<span class="k">elsif</span> <span class="m">2</span>.zero?
+  puts <span class="s2">"Something is wrong..."</span>
+<span class="k">else</span>
+  puts <span class="s2">"Odd?!"</span>
+<span class="k">end</span>
+
+x <span class="o">=</span> <span class="m">0</span>
+<span class="k">while</span> x <span class="o">&lt;</span> <span class="m">10</span>
+  x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</span>
+<span class="k">end</span>
+
+print <span class="s2">"Enter your favourite color: "</span>
+
+<span class="k">case</span> gets.chomp.downcase
+<span class="k">when</span> <span class="s2">"red"</span>
+  puts <span class="s2">"Red as Rubies!"</span>
+<span class="k">when</span> <span class="s2">"green"</span>
+  puts <span class="s2">"Green as grass!"</span>
+<span class="k">when</span> <span class="s2">"blue"</span>
+  puts <span class="s2">"Blue as the sky!"</span>
+<span class="k">else</span>                                    <span class="c1"># default case</span>
+  puts <span class="s2">"I only like primary colours..."</span>
+<span class="k">end</span></pre></div>
+
+<p>All pretty standard stuff, you may notice the statements terminate in <code>end</code> - this is to delimit the statements and is simply intrinsic to the syntax. I personally find it preferable to the Python scheme of using whitespace for this. The <code>case</code> and <code>when</code> being at the same level of indentation is purely stylistic - but this style is the preferred one. Now for how these constructs differ in little in Ruby!</p>
+
+<div class="highlight highlight-Ruby"><pre>puts <span class="s2">"Statements work inline!"</span> <span class="k">if</span> <span class="m">2</span>.even?
+
+puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</span> <span class="k">while</span> x <span class="o">&lt;</span> <span class="m">10</span>
+
+<span class="c1"># Opposite of while</span>
+<span class="k">until</span> x.zero?
+  puts x <span class="o">=</span> x <span class="o">-</span> <span class="m">1</span>
+<span class="k">end</span>
+
+<span class="c1"># Opposite of if</span>
+<span class="k">unless</span> <span class="m">2</span>.odd?
+  puts <span class="s2">"Even!"</span>
+<span class="k">end</span></pre></div>
+
+<p>Sometimes these can get confusing, sometimes they can make code more readable or concise. When you use them is up to you.</p>
+
+<h1>
+<a id="wheres-my-for-loop" class="anchor" href="#wheres-my-for-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where's my For loop?!?</h1>
+
+<p>Before I mentioned that Ruby has no <code>For</code> loop. This might seem very bizarre, but many of you will already be familiar with the styles of iteration that are utilised in Ruby (though perhaps not how they are implemented). Ruby extensively uses enumerables - these are objects which move successively through states. They can be used in multiple ways, and we can even define our own though for now we will just look at basic ones.</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="m">10</span>.times <span class="c1"># Not very useful at the moment...</span>
+
+<span class="m">10</span>.times { puts <span class="s2">"Loops!"</span> }
+<span class="si">```Ruby</span>
+<span class="si"></span>
+<span class="si">`</span><span class="k">do </span><span class="k">end</span><span class="si">`, and `</span>{ }<span class="si">` are (very nearly) exactly the same thing. `</span>{ }<span class="si">` is preferred for single line use, and `</span><span class="k">do </span><span class="k">end</span><span class="si">` for multi. They are called blocks and though they may seem simple, they are one of Ruby's most powerful assets. They are NOT the same as compound statements in C-like languages.</span>
+<span class="si"></span>
+<span class="si">```</span><span class="no">Ruby</span>
+<span class="m">1</span>..<span class="m">100</span>   <span class="c1"># A range from 1-100, a type of collection</span>
+<span class="m">1</span>...<span class="m">100</span>  <span class="c1"># A range from 1-99</span>
+
+(<span class="m">1</span>..<span class="m">10</span>).each {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> puts x<span class="o">*</span>x<span class="o">*</span>x}</pre></div>
+
+<p>each takes a collection, such as a range, an array or a hash and passes each item in the collection successively to the block. How to refer to the items passed from the collection is specified between the pipes <code>| |</code>. Let's see something using a few of the things we've seen so far.</p>
+
+<div class="highlight highlight-Ruby"><pre>animals <span class="o">=</span> <span class="o">[</span><span class="s2">"dog"</span>, <span class="s2">"cat"</span>, <span class="s2">"hamster"</span><span class="o">]</span>
+people <span class="o">=</span> <span class="o">[</span><span class="s2">"charlie"</span>, <span class="s2">"mark"</span>, <span class="s2">"dave"</span><span class="o">]</span>
+petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span>people.zip(animals)<span class="o">]</span>
+
+(petHash).each <span class="k">do </span><span class="o">|</span><span class="nv">person</span><span class="o">,</span> <span class="nv">pet</span><span class="o">|</span> 
+  puts <span class="s2">"<span class="cp">#{</span><span class="h">person.capitalize</span><span class="cp"><span class="h">}</span></span> loves their <span class="cp">#{</span><span class="h">pet</span><span class="cp"><span class="h">}</span></span>"</span>
+<span class="k">end</span></pre></div>
+
+<h1>
+<a id="time-for-a-task" class="anchor" href="#time-for-a-task" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time for a task</h1>
+
+<p>The program FizzBuzz should take as an argument an integer to be passed via the command line like this: <code>ruby fizzbuzz.rb 20</code></p>
+
+<p>It should print out Fizz if the number is divisible by 3, Buzz if it is divisible by 5, FizzBuzz if it is divisible by 15 and the number itself if it is divisible by neither 3 nor 5. This should be doable with what we've seen already, plus a couple of things I'll demonstrate below. Feel free to try to write this in pairs.</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="no">ARGV</span>         <span class="c1"># The array containing all your command line arguments.</span>
+x.modulo(y)  <span class="c1"># The remainder of dividing x by y</span>
+<span class="s2">"3"</span>.to_i     <span class="c1"># String to integer</span></pre></div>
       </section>
     </div>
 

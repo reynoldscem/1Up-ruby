@@ -184,13 +184,11 @@ puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</sp
 
 <div class="highlight highlight-Ruby"><pre><span class="m">10</span>.times <span class="c1"># Not very useful at the moment...</span>
 
-<span class="m">10</span>.times { puts <span class="s2">"Loops!"</span> }
-<span class="si">```Ruby</span>
-<span class="si"></span>
-<span class="si">`</span><span class="k">do </span><span class="k">end</span><span class="si">`, and `</span>{ }<span class="si">` are (very nearly) exactly the same thing. `</span>{ }<span class="si">` is preferred for single line use, and `</span><span class="k">do </span><span class="k">end</span><span class="si">` for multi. They are called blocks and though they may seem simple, they are one of Ruby's most powerful assets. They are NOT the same as compound statements in C-like languages.</span>
-<span class="si"></span>
-<span class="si">```</span><span class="no">Ruby</span>
-<span class="m">1</span>..<span class="m">100</span>   <span class="c1"># A range from 1-100, a type of collection</span>
+<span class="m">10</span>.times { puts <span class="s2">"Loops!"</span> }</pre></div>
+
+<p><code>do end</code>, and <code>{ }</code> are (very nearly) exactly the same thing. <code>{ }</code> is preferred for single line use, and <code>do end</code> for multi. They are called blocks and though they may seem simple, they are one of Ruby's most powerful assets. They are NOT the same as compound statements in C-like languages.</p>
+
+<div class="highlight highlight-Ruby"><pre><span class="m">1</span>..<span class="m">100</span>   <span class="c1"># A range from 1-100, a type of collection</span>
 <span class="m">1</span>...<span class="m">100</span>  <span class="c1"># A range from 1-99</span>
 
 (<span class="m">1</span>..<span class="m">10</span>).each {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> puts x<span class="o">*</span>x<span class="o">*</span>x}</pre></div>

@@ -55,7 +55,10 @@ puts <span class="m">1</span>.<span class="o">+</span>(<span class="m">2</span>)
 
 <p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods like anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
 
-<p>Let's try and make this a little more personal by printing out your own name - we can either get this from standard input or from command line arguments. In order to make this workshop a little less of a walkthrough, I'm going to try to avoid just giving you code to run and instead give you the building blocks and let you come up with a solution, this is to make it less tedious for those with some (or lots!) of programming experience. If you are new, and find yourself getting stuck be sure to ask for help!</p>
+<h1>
+<a id="time-for-task-1" class="anchor" href="#time-for-task-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time for Task 1</h1>
+
+<p>Write a program to print out your own name, taken from standard input. In order to make this workshop a little less of a walkthrough, I'm going to try to avoid just giving you code to run and instead give you the building blocks and let you come up with a solution, this is to make it less tedious for those with some (or lots!) of programming experience. If you are new, and find yourself getting stuck be sure to ask for help!</p>
 
 <p>Read the following snippet, and see if you can print out a greeting to yourself, giving your name from standard input in just one line.</p>
 
@@ -180,6 +183,25 @@ puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</sp
 <p>Sometimes these can get confusing, sometimes they can make code more readable or concise. When you use them is up to you.</p>
 
 <h1>
+<a id="task-2" class="anchor" href="#task-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2</h1>
+
+<p>The program Greetings should loop through names taken from standard input and print a greeting to each person.</p>
+
+<p>It should work like this:</p>
+
+<p>Enter a name: Charlie</p>
+
+<p>Hello Charlie!</p>
+
+<p>Enter a name: Lewis</p>
+
+<p>Hello Lewis!</p>
+
+<p>Enter a name: Nathan</p>
+
+<p>Hello Nathan!</p>
+
+<h1>
 <a id="wheres-my-for-loop" class="anchor" href="#wheres-my-for-loop" aria-hidden="true"><span class="octicon octicon-link"></span></a>Where's my For loop?!?</h1>
 
 <p>Before I mentioned that Ruby has no <code>For</code> loop. This might seem very bizarre, but many of you will already be familiar with the styles of iteration that are utilised in Ruby (though perhaps not how they are implemented). Ruby extensively uses enumerables - these are objects which move successively through states. They can be used in multiple ways, and we can even define our own though for now we will just look at basic ones.</p>
@@ -206,9 +228,9 @@ petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</
 <span class="k">end</span></pre></div>
 
 <h1>
-<a id="time-for-task-1" class="anchor" href="#time-for-task-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Time for task 1</h1>
+<a id="task-3" class="anchor" href="#task-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3</h1>
 
-<p>The program Greetings should take a list of names passed as command line arguments like this: <code>ruby greetings.rb charlie lewis nathan</code></p>
+<p>Modify the program Greetings to take a list of names passed as command line arguments like this: <code>ruby greetings.rb charlie lewis nathan</code></p>
 
 <p>It should print out:</p>
 
@@ -223,7 +245,7 @@ petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</
 <div class="highlight highlight-Ruby"><pre><span class="no">ARGV</span>         <span class="c1"># The array containing all your command line arguments.</span></pre></div>
 
 <h1>
-<a id="task-2" class="anchor" href="#task-2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 2</h1>
+<a id="task-4" class="anchor" href="#task-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4</h1>
 
 <p>The program FizzBuzz should take as an argument an integer to be passed via the command line like this: <code>ruby fizzbuzz.rb 20</code></p>
 

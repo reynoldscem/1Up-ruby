@@ -39,6 +39,8 @@
 
 <p>You can see how to install Ruby on you operating system of choice <a href="https://www.ruby-lang.org/en/installation/">here</a>.</p>
 
+<p>If you can't install Ruby on your local machine, you can use an online version <a href="http://labs.codecademy.com/">here</a>.</p>
+
 <h1>
 <a id="basic-syntax" class="anchor" href="#basic-syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic syntax</h1>
 
@@ -168,6 +170,15 @@ print <span class="s2">"Enter your favourite color: "</span>
 <p>All pretty standard stuff, you may notice the statements terminate in <code>end</code> - this is to delimit the statements and is simply intrinsic to the syntax. I personally find it preferable to the Python scheme of using whitespace for this. The <code>case</code> and <code>when</code> being at the same level of indentation is purely stylistic - but this style is the preferred one. Now for how these constructs differ in little in Ruby!</p>
 
 <div class="highlight highlight-Ruby"><pre>puts <span class="s2">"Statements work inline!"</span> <span class="k">if</span> <span class="m">2</span>.even?
+
+result <span class="pl-ko">=</span> <span class="pl-k">if</span> <span class="pl-cn">2</span>.even?
+	 [<span class="pl-s1"><span class="pl-pds">"</span>Ifs are expressions, <span class="pl-pds">"</span></span>,
+	 <span class="pl-s1"><span class="pl-pds">"</span>they return the last <span class="pl-pds">"</span></span>,
+	 <span class="pl-s1"><span class="pl-pds">"</span>expression that is evaluated.<span class="pl-pds">"</span></span>]
+	 <span class="pl-k">else</span> <span class="pl-cn">2</span>.odd?
+	 <span class="pl-s1"><span class="pl-pds">"</span>Will never eval<span class="pl-pds">"</span></span>
+	 <span class="pl-k">end</span>
+	puts result.join
 
 puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</span> <span class="k">while</span> x <span class="o">&lt;</span> <span class="m">10</span>
 

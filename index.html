@@ -39,19 +39,21 @@
 
 <p>You can see how to install Ruby on you operating system of choice <a href="https://www.ruby-lang.org/en/installation/">here</a>.</p>
 
+<p>If you can't install Ruby on your local machine, you can use an online version <a href="http://labs.codecademy.com/">here</a>.</p>
+
 <h1>
 <a id="basic-syntax" class="anchor" href="#basic-syntax" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic syntax</h1>
 
 <p>First off let's take a look at some basic methods in Ruby. <code>puts()</code> is used to print text to the screen. Try typing this in into a file called <code>anything.rb</code> and running it with <code>ruby anything.rb</code>.</p>
 
-<div class="highlight highlight-ruby"><pre>puts(<span class="s2">"Hello World!"</span>)
-puts <span class="s2">"Hello world!"</span></pre></div>
+<div class="highlight highlight-ruby"><pre>puts(<span class="pl-s1"><span class="pl-pds">"</span>Hello World!<span class="pl-pds">"</span></span>)
+puts <span class="pl-s1"><span class="pl-pds">"</span>Hello world!<span class="pl-pds">"</span></span></pre></div>
 
 <p>We can see that "Hello World!" is printed twice, even though the second time the brackets were missing! In Ruby methods which take only one argument don't need brackets - this might seem weird if you're coming from other languages, but similar things happen in many languages it is often just that we don't think about what is happening behind the scenes.</p>
 
-<div class="highlight highlight-ruby"><pre><span class="c1"># Print out some arithmetic</span>
-puts <span class="m">1</span><span class="o">+</span><span class="m">2</span>
-puts <span class="m">1</span>.<span class="o">+</span>(<span class="m">2</span>)</pre></div>
+<div class="highlight highlight-ruby"><pre><span class="pl-c"><span class="pl-pdc">#</span> Print out some arithmetic</span>
+puts <span class="pl-cn">1</span><span class="pl-ko">+</span><span class="pl-cn">2</span>
+puts <span class="pl-cn">1</span>.<span class="pl-ko">+</span>(<span class="pl-cn">2</span>)</pre></div>
 
 <p>These two lines do exactly the same thing. As it turns out the operators we use all the time are just methods like anything else and can be called with that standard <code>thing1.method(argument)</code> syntax. The process of making an easier to read form of elements of a programming language is called <em>sugar</em>. Ruby is a very sugary language - I'd argue this makes it pretty sweet to write ;)</p>
 
@@ -62,37 +64,36 @@ puts <span class="m">1</span>.<span class="o">+</span>(<span class="m">2</span>)
 
 <p>Read the following snippet, and see if you can print out a greeting to yourself, giving your name from standard input in just one line.</p>
 
-<div class="highlight highlight-ruby"><pre>someInput <span class="o">=</span> gets.chomp
-<span class="c1"># gets is used to get a line of input from standard in</span>
-<span class="c1"># chomp is used to 'eat up' newline characters off of strings</span>
+<div class="highlight highlight-ruby"><pre>someInput <span class="pl-ko">=</span> gets.chomp
+<span class="pl-c"><span class="pl-pdc">#</span> gets is used to get a line of input from standard in</span>
+<span class="pl-c"><span class="pl-pdc">#</span> chomp is used to 'eat up' newline characters off of strings</span>
 
-string1 <span class="o">=</span> <span class="s2">"Ruby"</span>
-string2 <span class="o">=</span> <span class="s2">"open source"</span>
+string1 <span class="pl-ko">=</span> <span class="pl-s1"><span class="pl-pds">"</span>Ruby<span class="pl-pds">"</span></span>
+string2 <span class="pl-ko">=</span> <span class="pl-s1"><span class="pl-pds">"</span>open source<span class="pl-pds">"</span></span>
 
-puts <span class="s2">"<span class="cp">#{</span><span class="h">string1</span><span class="cp"><span class="h">}</span></span> is completely <span class="cp">#{</span><span class="h">strings2</span><span class="cp"><span class="h">}</span></span>"</span>
-<span class="c1"># #{variable} is used to interpolate (include) variables in a string.</span>
-<span class="c1"># If you're used to other languages (Python, Java, C*), Ruby also supports interpolation in their style.</span>
-puts <span class="s2">"%s is completely %s"</span> <span class="o">%</span> <span class="o">[</span>string1, string2<span class="o">]</span></pre></div>
+puts <span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">#{</span><span class="pl-s2">string1</span><span class="pl-pse"><span class="pl-s2">}</span></span> is completely <span class="pl-pse">#{</span><span class="pl-s2">strings2</span><span class="pl-pse"><span class="pl-s2">}</span></span><span class="pl-pds">"</span></span>
+<span class="pl-c"><span class="pl-pdc">#</span> #{variable} is used to interpolate (include) variables in a string.</span>
+<span class="pl-c"><span class="pl-pdc">#</span> If you're used to other languages (Python, Java, C*), Ruby also supports interpolation in their style.</span>
+puts <span class="pl-s1"><span class="pl-pds">"</span>%s is completely %s<span class="pl-pds">"</span></span> <span class="pl-ko">%</span> [string1, string2]</pre></div>
 
 <p>Assuming you've got a solution for that (don't worry if it's a few lines) let's compare that to the same thing in Java.</p>
 
-<div class="highlight highlight-java"><pre><span class="k">import</span> <span class="k">java.io.*</span>;
-<span class="k">public</span> <span class="k">class</span> <span class="nc">example</span>
+<div class="highlight highlight-java"><pre><span class="pl-k">import</span> <span class="pl-s">java.io.*</span>;
+<span class="pl-s">public</span> <span class="pl-s">class</span> <span class="pl-entc">example</span>
 {
-  <span class="k">public</span> <span class="k">static</span> <span class="kt">void</span> <span class="nf">main</span> (<span class="kt">String</span>[] <span class="nv">args</span>)
+  <span class="pl-s">public</span> <span class="pl-s">static</span> <span class="pl-s">void</span> <span class="pl-enf">main</span> (<span class="pl-s">String</span>[] <span class="pl-v">args</span>)
   {
-    <span class="k">try</span>
+    <span class="pl-k">try</span>
     {
-      <span class="kt">BufferedReader</span> stdin <span class="o">=</span> <span class="k">new</span> <span class="kt">BufferedReader</span>(<span class="k">new</span> <span class="kt">InputStreamReader</span>(<span class="kt">System</span><span class="o">.</span>in));
-      <span class="kt">String</span> name;
-      name <span class="o">=</span> stdin<span class="o">.</span>readLine();
-      <span class="kt">System</span><span class="o">.</span>out<span class="o">.</span>println(<span class="s2">"Hello "</span> <span class="o">+</span> name);
-    } <span class="k">catch</span> (<span class="kt">IOException</span> e) {
-      <span class="kt">System</span><span class="o">.</span>err<span class="o">.</span>println(<span class="s2">"IOException: "</span> <span class="o">+</span> e<span class="o">.</span>getMessage());
+      <span class="pl-s">BufferedReader</span> stdin <span class="pl-ko">=</span> <span class="pl-k">new</span> <span class="pl-s">BufferedReader</span>(<span class="pl-k">new</span> <span class="pl-s">InputStreamReader</span>(<span class="pl-s">System</span><span class="pl-ko">.</span>in));
+      <span class="pl-s">String</span> name;
+      name <span class="pl-ko">=</span> stdin<span class="pl-ko">.</span>readLine();
+      <span class="pl-s">System</span><span class="pl-ko">.</span>out<span class="pl-ko">.</span>println(<span class="pl-s1"><span class="pl-pds">"</span>Hello <span class="pl-pds">"</span></span> <span class="pl-ko">+</span> name);
+    } <span class="pl-k">catch</span> (<span class="pl-s">IOException</span> e) {
+      <span class="pl-s">System</span><span class="pl-ko">.</span>err<span class="pl-ko">.</span>println(<span class="pl-s1"><span class="pl-pds">"</span>IOException: <span class="pl-pds">"</span></span> <span class="pl-ko">+</span> e<span class="pl-ko">.</span>getMessage());
     }
   }
-}
-</pre></div>
+}</pre></div>
 
 <p>A lot longer and harder to understand right? Maybe this will give an insight into why ruby programmers start preferring it so much over other languages. While this is a tiny example, the extra readability and ease of writing can make a huge difference in big projects!</p>
 
@@ -101,85 +102,94 @@ puts <span class="s2">"%s is completely %s"</span> <span class="o">%</span> <spa
 
 <p>In programs we often want to have groups of things, the main ways we represent this is with <code>arrays</code> and <code>hashes</code>. Hashes are also called maps, dictionaries and hashmaps in other languages.</p>
 
-<div class="highlight highlight-ruby"><pre>animals <span class="o">=</span> <span class="o">[</span><span class="s2">"dog"</span>, <span class="s2">"cat"</span>, <span class="s2">"hamster"</span><span class="o">]</span>
+<div class="highlight highlight-ruby"><pre>animals <span class="pl-ko">=</span> [<span class="pl-s1"><span class="pl-pds">"</span>dog<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>cat<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>hamster<span class="pl-pds">"</span></span>]
 puts animals
 
-people <span class="o">=</span> <span class="o">[</span><span class="s2">"charlie"</span>, <span class="s2">"mark"</span>, <span class="s2">"dave"</span><span class="o">]</span>
-puts people<span class="o">[</span><span class="m">0</span><span class="o">]</span>
+people <span class="pl-ko">=</span> [<span class="pl-s1"><span class="pl-pds">"</span>charlie<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>mark<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>dave<span class="pl-pds">"</span></span>]
+puts people[<span class="pl-cn">0</span>]
 puts people.first
 puts people
 
-numbers <span class="o">=</span> <span class="o">[</span><span class="m">78</span>, <span class="m">0</span>, <span class="m">47.8</span>, <span class="o">-</span><span class="m">100</span>, <span class="m">1</span><span class="o">/</span><span class="m">0.0</span>, <span class="no">Math</span>::<span class="no">PI</span><span class="o">]</span>
-numbers.push <span class="m">3</span>      <span class="c1"># Add three to the end of the array</span>
+numbers <span class="pl-ko">=</span> [<span class="pl-cn">78</span>, <span class="pl-cn">0</span>, <span class="pl-cn">47.8</span>, <span class="pl-ko">-</span><span class="pl-cn">100</span>, <span class="pl-cn">1</span><span class="pl-ko">/</span><span class="pl-cn">0.0</span>, <span class="pl-sc">Math</span>::<span class="pl-v">PI</span>]
+numbers.push <span class="pl-cn">3</span>      <span class="pl-c"><span class="pl-pdc">#</span> Add three to the end of the array</span>
 puts numbers.sort
 puts numbers.first
 puts numbers.max
-<span class="c1"># Arrays come with some useful methods</span>
+<span class="pl-c"><span class="pl-pdc">#</span> Arrays come with some useful methods</span>
 
-mixed <span class="o">=</span> <span class="o">[</span><span class="m">78</span>, <span class="kc">nil</span>, <span class="s2">"charlie"</span><span class="o">]</span>
+mixed <span class="pl-ko">=</span> [<span class="pl-cn">78</span>, <span class="pl-c1">nil</span>, <span class="pl-s1"><span class="pl-pds">"</span>charlie<span class="pl-pds">"</span></span>]
 puts mixed
-<span class="c1"># We can easily mix types in arrays (as everything is an object)</span>
+<span class="pl-c"><span class="pl-pdc">#</span> We can easily mix types in arrays (as everything is an object)</span>
 
-petHash <span class="o">=</span> {<span class="s2">"charlie"</span> <span class="o">=&gt;</span> <span class="s2">"dog"</span>, <span class="s2">"mark"</span> <span class="o">=&gt;</span> <span class="s2">"cat"</span>, <span class="s2">"dave"</span> <span class="o">=&gt;</span> <span class="s2">"hamster"</span>}
+petHash <span class="pl-ko">=</span> {<span class="pl-s1"><span class="pl-pds">"</span>charlie<span class="pl-pds">"</span></span> =&gt; <span class="pl-s1"><span class="pl-pds">"</span>dog<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>mark<span class="pl-pds">"</span></span> =&gt; <span class="pl-s1"><span class="pl-pds">"</span>cat<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>dave<span class="pl-pds">"</span></span> =&gt; <span class="pl-s1"><span class="pl-pds">"</span>hamster<span class="pl-pds">"</span></span>}
 puts petHash.keys
 puts petHash.values
-puts petHash<span class="o">[</span><span class="s2">"charlie"</span><span class="o">]</span>
-puts petHash<span class="o">[</span><span class="s2">"dave"</span><span class="o">]</span>
+puts petHash[<span class="pl-s1"><span class="pl-pds">"</span>charlie<span class="pl-pds">"</span></span>]
+puts petHash[<span class="pl-s1"><span class="pl-pds">"</span>dave<span class="pl-pds">"</span></span>]
 
-petHash<span class="o">[</span><span class="s2">"lewis"</span><span class="o">]</span> <span class="o">=</span> <span class="s2">"snake"</span>
+petHash[<span class="pl-s1"><span class="pl-pds">"</span>lewis<span class="pl-pds">"</span></span>] <span class="pl-ko">=</span> <span class="pl-s1"><span class="pl-pds">"</span>snake<span class="pl-pds">"</span></span>
 puts petHash</pre></div>
 
 <p>If we wanted to do some simple operations, like put the two arrays <code>animals</code> and <code>people</code> together to make the hash petHash we normally might think in terms of loops. Going through every element in the arrays and adding them into a hash. In Ruby this is not very idiomatic - in fact it may shock you to learn that Ruby has no <code>For</code> construct!</p>
 
-<div class="highlight highlight-ruby"><pre>petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span>people.zip(animals)<span class="o">]</span>
-<span class="c1"># This is (one of the ways) how we can do the above in Ruby.</span></pre></div>
+<div class="highlight highlight-ruby"><pre>petHash <span class="pl-ko">=</span> <span class="pl-sc">Hash</span>[people.zip(animals)]
+<span class="pl-c"><span class="pl-pdc">#</span> This is (one of the ways) how we can do the above in Ruby.</span></pre></div>
 
 <h1>
 <a id="control-flow" class="anchor" href="#control-flow" aria-hidden="true"><span class="octicon octicon-link"></span></a>Control Flow</h1>
 
 <p>To start simply, Ruby features the standard if, while and case statements. Though with a few little differences.</p>
 
-<div class="highlight highlight-Ruby"><pre><span class="k">if</span> <span class="m">2</span>.even?                             <span class="c1"># methods ending in ? return booleans!</span>
-  puts <span class="s2">"Even!"</span>
-<span class="k">elsif</span> <span class="m">2</span>.zero?
-  puts <span class="s2">"Something is wrong..."</span>
-<span class="k">else</span>
-  puts <span class="s2">"Odd?!"</span>
-<span class="k">end</span>
+<div class="highlight highlight-Ruby"><pre><span class="pl-k">if</span> <span class="pl-cn">2</span>.even?                             <span class="pl-c"><span class="pl-pdc">#</span> methods ending in ? return booleans!</span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Even!<span class="pl-pds">"</span></span>
+<span class="pl-k">elsif</span> <span class="pl-cn">2</span>.zero?
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Something is wrong...<span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Odd?!<span class="pl-pds">"</span></span>
+<span class="pl-k">end</span>
 
-x <span class="o">=</span> <span class="m">0</span>
-<span class="k">while</span> x <span class="o">&lt;</span> <span class="m">10</span>
-  x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</span>
-<span class="k">end</span>
+x <span class="pl-ko">=</span> <span class="pl-cn">0</span>
+<span class="pl-k">while</span> x <span class="pl-ko">&lt;</span> <span class="pl-cn">10</span>
+  x <span class="pl-ko">=</span> x <span class="pl-ko">+</span> <span class="pl-cn">1</span>
+<span class="pl-k">end</span>
 
-print <span class="s2">"Enter your favourite color: "</span>
+print <span class="pl-s1"><span class="pl-pds">"</span>Enter your favourite color: <span class="pl-pds">"</span></span>
 
-<span class="k">case</span> gets.chomp.downcase
-<span class="k">when</span> <span class="s2">"red"</span>
-  puts <span class="s2">"Red as Rubies!"</span>
-<span class="k">when</span> <span class="s2">"green"</span>
-  puts <span class="s2">"Green as grass!"</span>
-<span class="k">when</span> <span class="s2">"blue"</span>
-  puts <span class="s2">"Blue as the sky!"</span>
-<span class="k">else</span>                                    <span class="c1"># default case</span>
-  puts <span class="s2">"I only like primary colours..."</span>
-<span class="k">end</span></pre></div>
+<span class="pl-k">case</span> gets.chomp.downcase
+<span class="pl-k">when</span> <span class="pl-s1"><span class="pl-pds">"</span>red<span class="pl-pds">"</span></span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Red as Rubies!<span class="pl-pds">"</span></span>
+<span class="pl-k">when</span> <span class="pl-s1"><span class="pl-pds">"</span>green<span class="pl-pds">"</span></span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Green as grass!<span class="pl-pds">"</span></span>
+<span class="pl-k">when</span> <span class="pl-s1"><span class="pl-pds">"</span>blue<span class="pl-pds">"</span></span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Blue as the sky!<span class="pl-pds">"</span></span>
+<span class="pl-k">else</span>                                    <span class="pl-c"><span class="pl-pdc">#</span> default case</span>
+  puts <span class="pl-s1"><span class="pl-pds">"</span>I only like primary colours...<span class="pl-pds">"</span></span>
+<span class="pl-k">end</span></pre></div>
 
 <p>All pretty standard stuff, you may notice the statements terminate in <code>end</code> - this is to delimit the statements and is simply intrinsic to the syntax. I personally find it preferable to the Python scheme of using whitespace for this. The <code>case</code> and <code>when</code> being at the same level of indentation is purely stylistic - but this style is the preferred one. Now for how these constructs differ in little in Ruby!</p>
 
-<div class="highlight highlight-Ruby"><pre>puts <span class="s2">"Statements work inline!"</span> <span class="k">if</span> <span class="m">2</span>.even?
+<div class="highlight highlight-Ruby"><pre>puts <span class="pl-s1"><span class="pl-pds">"</span>Statements work inline!<span class="pl-pds">"</span></span> <span class="pl-k">if</span> <span class="pl-cn">2</span>.even?
 
-puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</span> <span class="k">while</span> x <span class="o">&lt;</span> <span class="m">10</span>
+result <span class="pl-ko">=</span> <span class="pl-k">if</span> <span class="pl-cn">2</span>.even?
+           [<span class="pl-s1"><span class="pl-pds">"</span>Ifs are expressions, <span class="pl-pds">"</span></span>,
+            <span class="pl-s1"><span class="pl-pds">"</span>they return the last <span class="pl-pds">"</span></span>,
+            <span class="pl-s1"><span class="pl-pds">"</span>expression that is evaluated.<span class="pl-pds">"</span></span>]
+         <span class="pl-k">else</span> <span class="pl-cn">2</span>.odd?
+           <span class="pl-s1"><span class="pl-pds">"</span>Will never eval<span class="pl-pds">"</span></span>
+         <span class="pl-k">end</span>
+puts result.join
 
-<span class="c1"># Opposite of while</span>
-<span class="k">until</span> x.zero?
-  puts x <span class="o">=</span> x <span class="o">-</span> <span class="m">1</span>
-<span class="k">end</span>
+puts x <span class="pl-ko">=</span> x <span class="pl-ko">+</span> <span class="pl-cn">1</span> <span class="pl-k">while</span> x <span class="pl-ko">&lt;</span> <span class="pl-cn">10</span>
 
-<span class="c1"># Opposite of if</span>
-<span class="k">unless</span> <span class="m">2</span>.odd?
-  puts <span class="s2">"Even!"</span>
-<span class="k">end</span></pre></div>
+<span class="pl-c"><span class="pl-pdc">#</span> Opposite of while</span>
+<span class="pl-k">until</span> x.zero?
+  puts x <span class="pl-ko">=</span> x <span class="pl-ko">-</span> <span class="pl-cn">1</span>
+<span class="pl-k">end</span>
+
+<span class="pl-c"><span class="pl-pdc">#</span> Opposite of if</span>
+<span class="pl-k">unless</span> <span class="pl-cn">2</span>.odd?
+  puts <span class="pl-s1"><span class="pl-pds">"</span>Even!<span class="pl-pds">"</span></span>
+<span class="pl-k">end</span></pre></div>
 
 <p>Sometimes these can get confusing, sometimes they can make code more readable or concise. When you use them is up to you.</p>
 
@@ -207,26 +217,26 @@ puts x <span class="o">=</span> x <span class="o">+</span> <span class="m">1</sp
 
 <p>Before I mentioned that Ruby has no <code>For</code> loop. This might seem very bizarre, but many of you will already be familiar with the styles of iteration that are utilised in Ruby (though perhaps not how they are implemented). Ruby extensively uses enumerables - these are objects which move successively through states. They can be used in multiple ways, and we can even define our own though for now we will just look at basic ones.</p>
 
-<div class="highlight highlight-Ruby"><pre><span class="m">10</span>.times <span class="c1"># Not very useful at the moment...</span>
+<div class="highlight highlight-Ruby"><pre><span class="pl-cn">10</span>.times <span class="pl-c"><span class="pl-pdc">#</span> Not very useful at the moment...</span>
 
-<span class="m">10</span>.times { puts <span class="s2">"Loops!"</span> }</pre></div>
+<span class="pl-cn">10</span>.times { puts <span class="pl-s1"><span class="pl-pds">"</span>Loops!<span class="pl-pds">"</span></span> }</pre></div>
 
 <p><code>do end</code>, and <code>{ }</code> are (very nearly) exactly the same thing. <code>{ }</code> is preferred for single line use, and <code>do end</code> for multi. They are called blocks and though they may seem simple, they are one of Ruby's most powerful assets. They are NOT the same as compound statements in C-like languages.</p>
 
-<div class="highlight highlight-Ruby"><pre><span class="m">1</span>..<span class="m">100</span>   <span class="c1"># A range from 1-100, a type of collection</span>
-<span class="m">1</span>...<span class="m">100</span>  <span class="c1"># A range from 1-99</span>
+<div class="highlight highlight-Ruby"><pre><span class="pl-cn">1</span>..<span class="pl-cn">100</span>   <span class="pl-c"><span class="pl-pdc">#</span> A range from 1-100, a type of collection</span>
+<span class="pl-cn">1</span>...<span class="pl-cn">100</span>  <span class="pl-c"><span class="pl-pdc">#</span> A range from 1-99</span>
 
-(<span class="m">1</span>..<span class="m">10</span>).each {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> puts x<span class="o">*</span>x<span class="o">*</span>x} <span class="c1"># Print the cube of all numbers from 1-10</span></pre></div>
+(<span class="pl-cn">1</span>..<span class="pl-cn">10</span>).each {|<span class="pl-v">x</span>| puts x<span class="pl-ko">*</span>x<span class="pl-ko">*</span>x} <span class="pl-c"><span class="pl-pdc">#</span> Print the cube of all numbers from 1-10</span></pre></div>
 
 <p>each takes a collection, such as a range, an array or a hash and passes each item in the collection successively to the block. How to refer to the items passed from the collection is specified between the pipes <code>| |</code>. Let's see something using a few of the things we've seen so far.</p>
 
-<div class="highlight highlight-Ruby"><pre>animals <span class="o">=</span> <span class="o">[</span><span class="s2">"dog"</span>, <span class="s2">"cat"</span>, <span class="s2">"hamster"</span><span class="o">]</span>
-people <span class="o">=</span> <span class="o">[</span><span class="s2">"charlie"</span>, <span class="s2">"mark"</span>, <span class="s2">"dave"</span><span class="o">]</span>
-petHash <span class="o">=</span> <span class="no">Hash</span><span class="o">[</span>people.zip(animals)<span class="o">]</span>
+<div class="highlight highlight-Ruby"><pre>animals <span class="pl-ko">=</span> [<span class="pl-s1"><span class="pl-pds">"</span>dog<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>cat<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>hamster<span class="pl-pds">"</span></span>]
+people <span class="pl-ko">=</span> [<span class="pl-s1"><span class="pl-pds">"</span>charlie<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>mark<span class="pl-pds">"</span></span>, <span class="pl-s1"><span class="pl-pds">"</span>dave<span class="pl-pds">"</span></span>]
+petHash <span class="pl-ko">=</span> <span class="pl-sc">Hash</span>[people.zip(animals)]
 
-petHash.each <span class="k">do </span><span class="o">|</span><span class="nv">person</span><span class="o">,</span> <span class="nv">pet</span><span class="o">|</span> 
-  puts <span class="s2">"<span class="cp">#{</span><span class="h">person.capitalize</span><span class="cp"><span class="h">}</span></span> loves their <span class="cp">#{</span><span class="h">pet</span><span class="cp"><span class="h">}</span></span>"</span>
-<span class="k">end</span></pre></div>
+petHash.each <span class="pl-k">do </span>|<span class="pl-v">person</span>, <span class="pl-v">pet</span>| 
+  puts <span class="pl-s1"><span class="pl-pds">"</span><span class="pl-pse">#{</span><span class="pl-s2">person.capitalize</span><span class="pl-pse"><span class="pl-s2">}</span></span> loves their <span class="pl-pse">#{</span><span class="pl-s2">pet</span><span class="pl-pse"><span class="pl-s2">}</span></span><span class="pl-pds">"</span></span>
+<span class="pl-k">end</span></pre></div>
 
 <h1>
 <a id="task-3" class="anchor" href="#task-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 3</h1>
@@ -243,7 +253,7 @@ petHash.each <span class="k">do </span><span class="o">|</span><span class="nv">
 
 <p>You will need:</p>
 
-<div class="highlight highlight-Ruby"><pre><span class="no">ARGV</span>         <span class="c1"># The array containing all your command line arguments.</span></pre></div>
+<div class="highlight highlight-Ruby"><pre><span class="pl-v">ARGV</span>         <span class="pl-c"><span class="pl-pdc">#</span> The array containing all your command line arguments.</span></pre></div>
 
 <h1>
 <a id="task-4" class="anchor" href="#task-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>Task 4</h1>
@@ -252,51 +262,51 @@ petHash.each <span class="k">do </span><span class="o">|</span><span class="nv">
 
 <p>It should print out Fizz if the number is divisible by 3, Buzz if it is divisible by 5, FizzBuzz if it is divisible by 15 and the number itself if it is divisible by neither 3 nor 5. This should be doable with what we've seen already, plus a couple of things I'll demonstrate below. Feel free to try to write this in pairs.</p>
 
-<div class="highlight highlight-Ruby"><pre>x.modulo(y)  <span class="c1"># The remainder of dividing x by y</span>
-<span class="s2">"3"</span>.to_i     <span class="c1"># String to integer</span></pre></div>
+<div class="highlight highlight-Ruby"><pre>x.modulo(y)  <span class="pl-c"><span class="pl-pdc">#</span> The remainder of dividing x by y</span>
+<span class="pl-s1"><span class="pl-pds">"</span>3<span class="pl-pds">"</span></span>.to_i     <span class="pl-c"><span class="pl-pdc">#</span> String to integer</span></pre></div>
 
 <h1>
 <a id="modifying-collections" class="anchor" href="#modifying-collections" aria-hidden="true"><span class="octicon octicon-link"></span></a>Modifying collections</h1>
 
 <p>Collections can be operated on using some wonderful methods influenced by functional programming.</p>
 
-<div class="highlight highlight-Ruby"><pre>anArray <span class="o">=</span> (<span class="m">1</span>..<span class="m">100</span>).to_a
+<div class="highlight highlight-Ruby"><pre>anArray <span class="pl-ko">=</span> (<span class="pl-cn">1</span>..<span class="pl-cn">100</span>).to_a
 
-<span class="c1"># The line below is just showing what will be returned from the line above.</span>
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>, <span class="m">10</span>, <span class="m">11</span>, <span class="m">12</span>, <span class="m">13</span>, <span class="m">14</span>, <span class="m">15</span>, <span class="m">16</span>, <span class="m">17</span>, <span class="m">18</span>, <span class="m">19</span>, <span class="m">20</span>, <span class="m">21</span>, <span class="m">22</span>, <span class="m">23</span>, <span class="m">24</span>, <span class="m">25</span>, <span class="m">26</span>, <span class="m">27</span>, <span class="m">28</span>, <span class="m">29</span>, <span class="m">30</span>, <span class="m">31</span>, <span class="m">32</span>, <span class="m">33</span>, <span class="m">34</span>, <span class="m">35</span>, <span class="m">36</span>, <span class="m">37</span>, <span class="m">38</span>, <span class="m">39</span>, <span class="m">40</span>, <span class="m">41</span>, <span class="m">42</span>, <span class="m">43</span>, <span class="m">44</span>, <span class="m">45</span>, <span class="m">46</span>, <span class="m">47</span>, <span class="m">48</span>, <span class="m">49</span>, <span class="m">50</span>, <span class="m">51</span>, <span class="m">52</span>, <span class="m">53</span>, <span class="m">54</span>, <span class="m">55</span>, <span class="m">56</span>, <span class="m">57</span>, <span class="m">58</span>, <span class="m">59</span>, <span class="m">60</span>, <span class="m">61</span>, <span class="m">62</span>, <span class="m">63</span>, <span class="m">64</span>, <span class="m">65</span>, <span class="m">66</span>, <span class="m">67</span>, <span class="m">68</span>, <span class="m">69</span>, <span class="m">70</span>, <span class="m">71</span>, <span class="m">72</span>, <span class="m">73</span>, <span class="m">74</span>, <span class="m">75</span>, <span class="m">76</span>, <span class="m">77</span>, <span class="m">78</span>, <span class="m">79</span>, <span class="m">80</span>, <span class="m">81</span>, <span class="m">82</span>, <span class="m">83</span>, <span class="m">84</span>, <span class="m">85</span>, <span class="m">86</span>, <span class="m">87</span>, <span class="m">88</span>, <span class="m">89</span>, <span class="m">90</span>, <span class="m">91</span>, <span class="m">92</span>, <span class="m">93</span>, <span class="m">94</span>, <span class="m">95</span>, <span class="m">96</span>, <span class="m">97</span>, <span class="m">98</span>, <span class="m">99</span>, <span class="m">100</span><span class="o">]</span>
+<span class="pl-c"><span class="pl-pdc">#</span> The line below is just showing what will be returned from the line above.</span>
+=&gt; [<span class="pl-cn">1</span>, <span class="pl-cn">2</span>, <span class="pl-cn">3</span>, <span class="pl-cn">4</span>, <span class="pl-cn">5</span>, <span class="pl-cn">6</span>, <span class="pl-cn">7</span>, <span class="pl-cn">8</span>, <span class="pl-cn">9</span>, <span class="pl-cn">10</span>, <span class="pl-cn">11</span>, <span class="pl-cn">12</span>, <span class="pl-cn">13</span>, <span class="pl-cn">14</span>, <span class="pl-cn">15</span>, <span class="pl-cn">16</span>, <span class="pl-cn">17</span>, <span class="pl-cn">18</span>, <span class="pl-cn">19</span>, <span class="pl-cn">20</span>, <span class="pl-cn">21</span>, <span class="pl-cn">22</span>, <span class="pl-cn">23</span>, <span class="pl-cn">24</span>, <span class="pl-cn">25</span>, <span class="pl-cn">26</span>, <span class="pl-cn">27</span>, <span class="pl-cn">28</span>, <span class="pl-cn">29</span>, <span class="pl-cn">30</span>, <span class="pl-cn">31</span>, <span class="pl-cn">32</span>, <span class="pl-cn">33</span>, <span class="pl-cn">34</span>, <span class="pl-cn">35</span>, <span class="pl-cn">36</span>, <span class="pl-cn">37</span>, <span class="pl-cn">38</span>, <span class="pl-cn">39</span>, <span class="pl-cn">40</span>, <span class="pl-cn">41</span>, <span class="pl-cn">42</span>, <span class="pl-cn">43</span>, <span class="pl-cn">44</span>, <span class="pl-cn">45</span>, <span class="pl-cn">46</span>, <span class="pl-cn">47</span>, <span class="pl-cn">48</span>, <span class="pl-cn">49</span>, <span class="pl-cn">50</span>, <span class="pl-cn">51</span>, <span class="pl-cn">52</span>, <span class="pl-cn">53</span>, <span class="pl-cn">54</span>, <span class="pl-cn">55</span>, <span class="pl-cn">56</span>, <span class="pl-cn">57</span>, <span class="pl-cn">58</span>, <span class="pl-cn">59</span>, <span class="pl-cn">60</span>, <span class="pl-cn">61</span>, <span class="pl-cn">62</span>, <span class="pl-cn">63</span>, <span class="pl-cn">64</span>, <span class="pl-cn">65</span>, <span class="pl-cn">66</span>, <span class="pl-cn">67</span>, <span class="pl-cn">68</span>, <span class="pl-cn">69</span>, <span class="pl-cn">70</span>, <span class="pl-cn">71</span>, <span class="pl-cn">72</span>, <span class="pl-cn">73</span>, <span class="pl-cn">74</span>, <span class="pl-cn">75</span>, <span class="pl-cn">76</span>, <span class="pl-cn">77</span>, <span class="pl-cn">78</span>, <span class="pl-cn">79</span>, <span class="pl-cn">80</span>, <span class="pl-cn">81</span>, <span class="pl-cn">82</span>, <span class="pl-cn">83</span>, <span class="pl-cn">84</span>, <span class="pl-cn">85</span>, <span class="pl-cn">86</span>, <span class="pl-cn">87</span>, <span class="pl-cn">88</span>, <span class="pl-cn">89</span>, <span class="pl-cn">90</span>, <span class="pl-cn">91</span>, <span class="pl-cn">92</span>, <span class="pl-cn">93</span>, <span class="pl-cn">94</span>, <span class="pl-cn">95</span>, <span class="pl-cn">96</span>, <span class="pl-cn">97</span>, <span class="pl-cn">98</span>, <span class="pl-cn">99</span>, <span class="pl-cn">100</span>]
 
-anArray.select {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x.even? }
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">2</span>, <span class="m">4</span>, <span class="m">6</span>, <span class="m">8</span>, <span class="m">10</span>, <span class="m">12</span>, <span class="m">14</span>, <span class="m">16</span>, <span class="m">18</span>, <span class="m">20</span>, <span class="m">22</span>, <span class="m">24</span>, <span class="m">26</span>, <span class="m">28</span>, <span class="m">30</span>, <span class="m">32</span>, <span class="m">34</span>, <span class="m">36</span>, <span class="m">38</span>, <span class="m">40</span>, <span class="m">42</span>, <span class="m">44</span>, <span class="m">46</span>, <span class="m">48</span>, <span class="m">50</span>, <span class="m">52</span>, <span class="m">54</span>, <span class="m">56</span>, <span class="m">58</span>, <span class="m">60</span>, <span class="m">62</span>, <span class="m">64</span>, <span class="m">66</span>, <span class="m">68</span>, <span class="m">70</span>, <span class="m">72</span>, <span class="m">74</span>, <span class="m">76</span>, <span class="m">78</span>, <span class="m">80</span>, <span class="m">82</span>, <span class="m">84</span>, <span class="m">86</span>, <span class="m">88</span>, <span class="m">90</span>, <span class="m">92</span>, <span class="m">94</span>, <span class="m">96</span>, <span class="m">98</span>, <span class="m">100</span><span class="o">]</span>
+anArray.select {|<span class="pl-v">x</span>| x.even? }
+=&gt; [<span class="pl-cn">2</span>, <span class="pl-cn">4</span>, <span class="pl-cn">6</span>, <span class="pl-cn">8</span>, <span class="pl-cn">10</span>, <span class="pl-cn">12</span>, <span class="pl-cn">14</span>, <span class="pl-cn">16</span>, <span class="pl-cn">18</span>, <span class="pl-cn">20</span>, <span class="pl-cn">22</span>, <span class="pl-cn">24</span>, <span class="pl-cn">26</span>, <span class="pl-cn">28</span>, <span class="pl-cn">30</span>, <span class="pl-cn">32</span>, <span class="pl-cn">34</span>, <span class="pl-cn">36</span>, <span class="pl-cn">38</span>, <span class="pl-cn">40</span>, <span class="pl-cn">42</span>, <span class="pl-cn">44</span>, <span class="pl-cn">46</span>, <span class="pl-cn">48</span>, <span class="pl-cn">50</span>, <span class="pl-cn">52</span>, <span class="pl-cn">54</span>, <span class="pl-cn">56</span>, <span class="pl-cn">58</span>, <span class="pl-cn">60</span>, <span class="pl-cn">62</span>, <span class="pl-cn">64</span>, <span class="pl-cn">66</span>, <span class="pl-cn">68</span>, <span class="pl-cn">70</span>, <span class="pl-cn">72</span>, <span class="pl-cn">74</span>, <span class="pl-cn">76</span>, <span class="pl-cn">78</span>, <span class="pl-cn">80</span>, <span class="pl-cn">82</span>, <span class="pl-cn">84</span>, <span class="pl-cn">86</span>, <span class="pl-cn">88</span>, <span class="pl-cn">90</span>, <span class="pl-cn">92</span>, <span class="pl-cn">94</span>, <span class="pl-cn">96</span>, <span class="pl-cn">98</span>, <span class="pl-cn">100</span>]
 
 anArray
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">1</span>, <span class="m">2</span>, <span class="m">3</span>, <span class="m">4</span>, <span class="m">5</span>, <span class="m">6</span>, <span class="m">7</span>, <span class="m">8</span>, <span class="m">9</span>, <span class="m">10</span>, <span class="m">11</span>, <span class="m">12</span>, <span class="m">13</span>, <span class="m">14</span>, <span class="m">15</span>, <span class="m">16</span>, <span class="m">17</span>, <span class="m">18</span>, <span class="m">19</span>, <span class="m">20</span>, <span class="m">21</span>, <span class="m">22</span>, <span class="m">23</span>, <span class="m">24</span>, <span class="m">25</span>, <span class="m">26</span>, <span class="m">27</span>, <span class="m">28</span>, <span class="m">29</span>, <span class="m">30</span>, <span class="m">31</span>, <span class="m">32</span>, <span class="m">33</span>, <span class="m">34</span>, <span class="m">35</span>, <span class="m">36</span>, <span class="m">37</span>, <span class="m">38</span>, <span class="m">39</span>, <span class="m">40</span>, <span class="m">41</span>, <span class="m">42</span>, <span class="m">43</span>, <span class="m">44</span>, <span class="m">45</span>, <span class="m">46</span>, <span class="m">47</span>, <span class="m">48</span>, <span class="m">49</span>, <span class="m">50</span>, <span class="m">51</span>, <span class="m">52</span>, <span class="m">53</span>, <span class="m">54</span>, <span class="m">55</span>, <span class="m">56</span>, <span class="m">57</span>, <span class="m">58</span>, <span class="m">59</span>, <span class="m">60</span>, <span class="m">61</span>, <span class="m">62</span>, <span class="m">63</span>, <span class="m">64</span>, <span class="m">65</span>, <span class="m">66</span>, <span class="m">67</span>, <span class="m">68</span>, <span class="m">69</span>, <span class="m">70</span>, <span class="m">71</span>, <span class="m">72</span>, <span class="m">73</span>, <span class="m">74</span>, <span class="m">75</span>, <span class="m">76</span>, <span class="m">77</span>, <span class="m">78</span>, <span class="m">79</span>, <span class="m">80</span>, <span class="m">81</span>, <span class="m">82</span>, <span class="m">83</span>, <span class="m">84</span>, <span class="m">85</span>, <span class="m">86</span>, <span class="m">87</span>, <span class="m">88</span>, <span class="m">89</span>, <span class="m">90</span>, <span class="m">91</span>, <span class="m">92</span>, <span class="m">93</span>, <span class="m">94</span>, <span class="m">95</span>, <span class="m">96</span>, <span class="m">97</span>, <span class="m">98</span>, <span class="m">99</span>, <span class="m">100</span><span class="o">]</span></pre></div>
+=&gt; [<span class="pl-cn">1</span>, <span class="pl-cn">2</span>, <span class="pl-cn">3</span>, <span class="pl-cn">4</span>, <span class="pl-cn">5</span>, <span class="pl-cn">6</span>, <span class="pl-cn">7</span>, <span class="pl-cn">8</span>, <span class="pl-cn">9</span>, <span class="pl-cn">10</span>, <span class="pl-cn">11</span>, <span class="pl-cn">12</span>, <span class="pl-cn">13</span>, <span class="pl-cn">14</span>, <span class="pl-cn">15</span>, <span class="pl-cn">16</span>, <span class="pl-cn">17</span>, <span class="pl-cn">18</span>, <span class="pl-cn">19</span>, <span class="pl-cn">20</span>, <span class="pl-cn">21</span>, <span class="pl-cn">22</span>, <span class="pl-cn">23</span>, <span class="pl-cn">24</span>, <span class="pl-cn">25</span>, <span class="pl-cn">26</span>, <span class="pl-cn">27</span>, <span class="pl-cn">28</span>, <span class="pl-cn">29</span>, <span class="pl-cn">30</span>, <span class="pl-cn">31</span>, <span class="pl-cn">32</span>, <span class="pl-cn">33</span>, <span class="pl-cn">34</span>, <span class="pl-cn">35</span>, <span class="pl-cn">36</span>, <span class="pl-cn">37</span>, <span class="pl-cn">38</span>, <span class="pl-cn">39</span>, <span class="pl-cn">40</span>, <span class="pl-cn">41</span>, <span class="pl-cn">42</span>, <span class="pl-cn">43</span>, <span class="pl-cn">44</span>, <span class="pl-cn">45</span>, <span class="pl-cn">46</span>, <span class="pl-cn">47</span>, <span class="pl-cn">48</span>, <span class="pl-cn">49</span>, <span class="pl-cn">50</span>, <span class="pl-cn">51</span>, <span class="pl-cn">52</span>, <span class="pl-cn">53</span>, <span class="pl-cn">54</span>, <span class="pl-cn">55</span>, <span class="pl-cn">56</span>, <span class="pl-cn">57</span>, <span class="pl-cn">58</span>, <span class="pl-cn">59</span>, <span class="pl-cn">60</span>, <span class="pl-cn">61</span>, <span class="pl-cn">62</span>, <span class="pl-cn">63</span>, <span class="pl-cn">64</span>, <span class="pl-cn">65</span>, <span class="pl-cn">66</span>, <span class="pl-cn">67</span>, <span class="pl-cn">68</span>, <span class="pl-cn">69</span>, <span class="pl-cn">70</span>, <span class="pl-cn">71</span>, <span class="pl-cn">72</span>, <span class="pl-cn">73</span>, <span class="pl-cn">74</span>, <span class="pl-cn">75</span>, <span class="pl-cn">76</span>, <span class="pl-cn">77</span>, <span class="pl-cn">78</span>, <span class="pl-cn">79</span>, <span class="pl-cn">80</span>, <span class="pl-cn">81</span>, <span class="pl-cn">82</span>, <span class="pl-cn">83</span>, <span class="pl-cn">84</span>, <span class="pl-cn">85</span>, <span class="pl-cn">86</span>, <span class="pl-cn">87</span>, <span class="pl-cn">88</span>, <span class="pl-cn">89</span>, <span class="pl-cn">90</span>, <span class="pl-cn">91</span>, <span class="pl-cn">92</span>, <span class="pl-cn">93</span>, <span class="pl-cn">94</span>, <span class="pl-cn">95</span>, <span class="pl-cn">96</span>, <span class="pl-cn">97</span>, <span class="pl-cn">98</span>, <span class="pl-cn">99</span>, <span class="pl-cn">100</span>]</pre></div>
 
 <p>Here we can see the select method, it takes a collection and returns another collection depending on the result of the block. Every element (x), where x.even? is true is part of the new collection.</p>
 
 <p>Notice how when we looked at the array again, it hadn't changed. We can update the collection to reflect the change it in two ways.</p>
 
-<div class="highlight highlight-Ruby"><pre>anArray <span class="o">=</span> anArray.select {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x.even? }
+<div class="highlight highlight-Ruby"><pre>anArray <span class="pl-ko">=</span> anArray.select {|<span class="pl-v">x</span>| x.even? }
 
 anArray
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">2</span>, <span class="m">4</span>, <span class="m">6</span>, <span class="m">8</span>, <span class="m">10</span>, <span class="m">12</span>, <span class="m">14</span>, <span class="m">16</span>, <span class="m">18</span>, <span class="m">20</span>, <span class="m">22</span>, <span class="m">24</span>, <span class="m">26</span>, <span class="m">28</span>, <span class="m">30</span>, <span class="m">32</span>, <span class="m">34</span>, <span class="m">36</span>, <span class="m">38</span>, <span class="m">40</span>, <span class="m">42</span>, <span class="m">44</span>, <span class="m">46</span>, <span class="m">48</span>, <span class="m">50</span>, <span class="m">52</span>, <span class="m">54</span>, <span class="m">56</span>, <span class="m">58</span>, <span class="m">60</span>, <span class="m">62</span>, <span class="m">64</span>, <span class="m">66</span>, <span class="m">68</span>, <span class="m">70</span>, <span class="m">72</span>, <span class="m">74</span>, <span class="m">76</span>, <span class="m">78</span>, <span class="m">80</span>, <span class="m">82</span>, <span class="m">84</span>, <span class="m">86</span>, <span class="m">88</span>, <span class="m">90</span>, <span class="m">92</span>, <span class="m">94</span>, <span class="m">96</span>, <span class="m">98</span>, <span class="m">100</span><span class="o">]</span></pre></div>
+=&gt; [<span class="pl-cn">2</span>, <span class="pl-cn">4</span>, <span class="pl-cn">6</span>, <span class="pl-cn">8</span>, <span class="pl-cn">10</span>, <span class="pl-cn">12</span>, <span class="pl-cn">14</span>, <span class="pl-cn">16</span>, <span class="pl-cn">18</span>, <span class="pl-cn">20</span>, <span class="pl-cn">22</span>, <span class="pl-cn">24</span>, <span class="pl-cn">26</span>, <span class="pl-cn">28</span>, <span class="pl-cn">30</span>, <span class="pl-cn">32</span>, <span class="pl-cn">34</span>, <span class="pl-cn">36</span>, <span class="pl-cn">38</span>, <span class="pl-cn">40</span>, <span class="pl-cn">42</span>, <span class="pl-cn">44</span>, <span class="pl-cn">46</span>, <span class="pl-cn">48</span>, <span class="pl-cn">50</span>, <span class="pl-cn">52</span>, <span class="pl-cn">54</span>, <span class="pl-cn">56</span>, <span class="pl-cn">58</span>, <span class="pl-cn">60</span>, <span class="pl-cn">62</span>, <span class="pl-cn">64</span>, <span class="pl-cn">66</span>, <span class="pl-cn">68</span>, <span class="pl-cn">70</span>, <span class="pl-cn">72</span>, <span class="pl-cn">74</span>, <span class="pl-cn">76</span>, <span class="pl-cn">78</span>, <span class="pl-cn">80</span>, <span class="pl-cn">82</span>, <span class="pl-cn">84</span>, <span class="pl-cn">86</span>, <span class="pl-cn">88</span>, <span class="pl-cn">90</span>, <span class="pl-cn">92</span>, <span class="pl-cn">94</span>, <span class="pl-cn">96</span>, <span class="pl-cn">98</span>, <span class="pl-cn">100</span>]</pre></div>
 
 <p>Now we can see the new collection has been assigned to the variable which used to hold the reference to the former collection.</p>
 
-<div class="highlight highlight-Ruby"><pre>anArray <span class="o">=</span> (<span class="m">1</span>..<span class="m">100</span>).to_a
-anArray.select! {<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x.even? }
+<div class="highlight highlight-Ruby"><pre>anArray <span class="pl-ko">=</span> (<span class="pl-cn">1</span>..<span class="pl-cn">100</span>).to_a
+anArray.select! {|<span class="pl-v">x</span>| x.even? }
 
 anArray
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">2</span>, <span class="m">4</span>, <span class="m">6</span>, <span class="m">8</span>, <span class="m">10</span>, <span class="m">12</span>, <span class="m">14</span>, <span class="m">16</span>, <span class="m">18</span>, <span class="m">20</span>, <span class="m">22</span>, <span class="m">24</span>, <span class="m">26</span>, <span class="m">28</span>, <span class="m">30</span>, <span class="m">32</span>, <span class="m">34</span>, <span class="m">36</span>, <span class="m">38</span>, <span class="m">40</span>, <span class="m">42</span>, <span class="m">44</span>, <span class="m">46</span>, <span class="m">48</span>, <span class="m">50</span>, <span class="m">52</span>, <span class="m">54</span>, <span class="m">56</span>, <span class="m">58</span>, <span class="m">60</span>, <span class="m">62</span>, <span class="m">64</span>, <span class="m">66</span>, <span class="m">68</span>, <span class="m">70</span>, <span class="m">72</span>, <span class="m">74</span>, <span class="m">76</span>, <span class="m">78</span>, <span class="m">80</span>, <span class="m">82</span>, <span class="m">84</span>, <span class="m">86</span>, <span class="m">88</span>, <span class="m">90</span>, <span class="m">92</span>, <span class="m">94</span>, <span class="m">96</span>, <span class="m">98</span>, <span class="m">100</span><span class="o">]</span></pre></div>
+=&gt; [<span class="pl-cn">2</span>, <span class="pl-cn">4</span>, <span class="pl-cn">6</span>, <span class="pl-cn">8</span>, <span class="pl-cn">10</span>, <span class="pl-cn">12</span>, <span class="pl-cn">14</span>, <span class="pl-cn">16</span>, <span class="pl-cn">18</span>, <span class="pl-cn">20</span>, <span class="pl-cn">22</span>, <span class="pl-cn">24</span>, <span class="pl-cn">26</span>, <span class="pl-cn">28</span>, <span class="pl-cn">30</span>, <span class="pl-cn">32</span>, <span class="pl-cn">34</span>, <span class="pl-cn">36</span>, <span class="pl-cn">38</span>, <span class="pl-cn">40</span>, <span class="pl-cn">42</span>, <span class="pl-cn">44</span>, <span class="pl-cn">46</span>, <span class="pl-cn">48</span>, <span class="pl-cn">50</span>, <span class="pl-cn">52</span>, <span class="pl-cn">54</span>, <span class="pl-cn">56</span>, <span class="pl-cn">58</span>, <span class="pl-cn">60</span>, <span class="pl-cn">62</span>, <span class="pl-cn">64</span>, <span class="pl-cn">66</span>, <span class="pl-cn">68</span>, <span class="pl-cn">70</span>, <span class="pl-cn">72</span>, <span class="pl-cn">74</span>, <span class="pl-cn">76</span>, <span class="pl-cn">78</span>, <span class="pl-cn">80</span>, <span class="pl-cn">82</span>, <span class="pl-cn">84</span>, <span class="pl-cn">86</span>, <span class="pl-cn">88</span>, <span class="pl-cn">90</span>, <span class="pl-cn">92</span>, <span class="pl-cn">94</span>, <span class="pl-cn">96</span>, <span class="pl-cn">98</span>, <span class="pl-cn">100</span>]</pre></div>
 
 <p>Appending the <code>!</code> to select actually called a different method. In Ruby not only are <code>?</code>s allowed in method names, but also <code>!</code>. It is conventioned that methods ending in <code>!</code> have a normal version, and a version which does something <em>unexpected</em>. In this case the unexpected thing is that it modifies the initial array. A method ending in <code>!</code> is called a bang method.</p>
 
 <p>Now let's look at a couple of other functional methods.</p>
 
-<div class="highlight highlight-Ruby"><pre>(<span class="m">1</span>..<span class="m">10</span>).map{<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x<span class="o">*</span>x}
-<span class="o">=&gt;</span> <span class="o">[</span><span class="m">1</span>, <span class="m">4</span>, <span class="m">9</span>, <span class="m">16</span>, <span class="m">25</span>, <span class="m">36</span>, <span class="m">49</span>, <span class="m">64</span>, <span class="m">81</span>, <span class="m">100</span><span class="o">]</span>
+<div class="highlight highlight-Ruby"><pre>(<span class="pl-cn">1</span>..<span class="pl-cn">10</span>).map{|<span class="pl-v">x</span>| x<span class="pl-ko">*</span>x}
+=&gt; [<span class="pl-cn">1</span>, <span class="pl-cn">4</span>, <span class="pl-cn">9</span>, <span class="pl-cn">16</span>, <span class="pl-cn">25</span>, <span class="pl-cn">36</span>, <span class="pl-cn">49</span>, <span class="pl-cn">64</span>, <span class="pl-cn">81</span>, <span class="pl-cn">100</span>]
 
-(<span class="m">1</span>..<span class="m">10</span>).reduce(<span class="m">0</span>){<span class="o">|</span><span class="nv">sum</span><span class="o">,</span> <span class="nv">elem</span><span class="o">|</span> sum <span class="o">+</span> elem}
-<span class="o">=&gt;</span> <span class="m">55</span></pre></div>
+(<span class="pl-cn">1</span>..<span class="pl-cn">10</span>).reduce(<span class="pl-cn">0</span>){|<span class="pl-v">sum</span>, <span class="pl-v">elem</span>| sum <span class="pl-ko">+</span> elem}
+=&gt; <span class="pl-cn">55</span></pre></div>
 
 <p>Map creates a new collection based on the execution of the block on each element. </p>
 
@@ -304,7 +314,7 @@ anArray
 
 <p>Because select and map take a collection, and return a collection we can chain them together to perform multiple operations in a row. </p>
 
-<div class="highlight highlight-Ruby"><pre>array.map{<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x.something}.select{<span class="o">|</span><span class="nv">x</span><span class="o">|</span> x.condition?}.reduce(<span class="m">1</span>){<span class="o">|</span><span class="nv">x</span><span class="o">,</span> <span class="nv">y</span><span class="o">|</span> x.somethingElse(y)}</pre></div>
+<div class="highlight highlight-Ruby"><pre>array.map{|<span class="pl-v">x</span>| x.something}.select{|<span class="pl-v">x</span>| x.condition?}.reduce(<span class="pl-cn">1</span>){|<span class="pl-v">x</span>, <span class="pl-v">y</span>| x.somethingElse(y)}</pre></div>
 
 <p>Try combining some of these things, along with trying to use some of their bang methods and see what happens!</p>
 
